@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="icon" href="assets/icon.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="js/marquee.js"></script>
+<script src="js/title.js"></script>
+<script src="js/countdown.js"></script>
+<script src="https://kit.fontawesome.com/cac34c9d75.js"></script>
+<script>
+(function($) {
+    "use strict";
+
+    jQuery(document).ready(function($) {});
+
+    jQuery(window).on('load', function() {
+        $(".preloader").fadeOut(1500);
+
+    });
+}(jQuery));
+</script>
+
+<audio autoplay loop id="music">
+  <source src="assets/music.mp3" type="audio/mp3">
+</audio>
+</body>
+
+<script>
+  var audio = document.getElementById("music");
+  audio.volume = 0.3;
+</script>
+
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+html {
+    position: fixed;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    touch-action: manipulation;
+}
+body {
+    font-family: 'Mulish', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: #111112;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+.particles-js-canvas-el {
+    position: absolute;
+    display: block;
+    vertical-align: bottom;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+    -webkit-transition: opacity .8s ease, -webkit-transform 1.4s ease;
+    transition: opacity .8s ease, transform 0.75s ease;
+    z-index: -1000;
+}
+.particles-js-canvas-el:hover {
+    transform: scale(1.1);
+}
+#particles-js {
+    background: linear-gradient(-45deg, #ad5389, #3c1053);
+	  background-size: 400% 400%;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -10;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+  display: block;
+  margin: 1em 0;
+}
+*,*:before,*:after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+.particles-js {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: 0px;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.glitch {
+  font-size: 30px;
+  text-align: center;
+  position: relative;
+  animation: shake .4s infinite;
+  animation-direction: alternate;
+}
+
+.glitch_fixed {
+  font-size: 30px;
+  text-align: center;
+  position: relative;
+  color: #EEEEEE;
+  animation: color .4s infinite;
+  animation-direction: alternate;
+}
+
+.glitch_opacity {
+  font-size: 30px;
+  text-align: center;
+  position: relative;
+  color: #EEEEEE;
+  position: absolute;
+  top: 0;
+  left: -2px;
+  animation: show .2s infinite;
+  animation-direction: alternate;
+}
+
+.glitch_opacity span {
+  color: #F802F8;
+}
+
+@keyframes show {
+  50% {
+    opacity: 0;
+    text-shadow: 2px 2px #AAE90E;
+  }
+}
+
+@keyframes color {
+  50% {
+    color: #b1b1b1;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(2px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(0px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(2px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(2px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+.span {
+  animation: glitch .4s linear infinite;
+  animation-direction: alternate;
+  position: absolute;
+  transform: translateY(0px);
+}
+
+.glithc span {
+  position: absolute;
+}
+
+.glitch span:first-child {
+  @extend .span;
+  left: 0;
+}
+
+.glitch span:nth-child(2) {
+  @extend .span;
+  left: 25px;
+}
+
+.glitch span:nth-child(3) {
+  @extend .span;
+  left: 50px;
+}
+
+.glitch span:nth-child(4) {
+  @extend .span;
+  left: 75px;
+}
+
+.glitch span:nth-child(5) {
+  @extend .span;
+  left: 100px;
+}
+
+.glitch span:nth-child(6) {
+  @extend .span;
+  left: 125px;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translateY(-10%);
+    transform: translateX(-5%);
+  }
+  50% {
+    transform: translateY(-10%);
+    transform: translateX(-10%);
+    color: #01FA01;
+  }
+  100% {
+    transform: translateY(10%);
+    transform: translateX(5%);
+    color: #FA0103;
+    clip: rect(40px, 0px, 40px, 0px);
+  }
+}
+
+a {
+    font-size: 13px;
+    color: #ff5266;
+}
+a:hover {
+    color: #cc4151;
+    text-decoration: none;
+}
+static {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    color: #ffffff;
+}
+countdown {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #dc77f2;
+}
+#author {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 10px;
+}
+#date {
+    position: fixed;
+    bottom: 0;
+    right:0;
+    margin-right: 10px;
+}
+
+
+h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 5em;
+  letter-spacing: 8px;
+  font-family: 'Press Start 2P';
+  font-weight: 400;
+  /*Create overlap*/
+  
+  margin: 0;
+  line-height: 0;
+  /*Animation*/
+  
+  animation: glitch1 2.5s infinite;
+}
+
+h1:nth-child(2) {
+  color: #67f3da;
+  animation: glitch2 2.5s infinite;
+}
+
+h1:nth-child(3) {
+  color: #f16f6f;
+  animation: glitch3 2.5s infinite;
+}
+/*Keyframes*/
+
+@keyframes glitch1 {
+  0% {
+    transform: none;
+    opacity: 1;
+  }
+  7% {
+    transform: skew(-0.5deg, -0.9deg);
+    opacity: 0.75;
+  }
+  10% {
+    transform: none;
+    opacity: 1;
+  }
+  27% {
+    transform: none;
+    opacity: 1;
+  }
+  30% {
+    transform: skew(0.8deg, -0.1deg);
+    opacity: 0.75;
+  }
+  35% {
+    transform: none;
+    opacity: 1;
+  }
+  52% {
+    transform: none;
+    opacity: 1;
+  }
+  55% {
+    transform: skew(-1deg, 0.2deg);
+    opacity: 0.75;
+  }
+  50% {
+    transform: none;
+    opacity: 1;
+  }
+  72% {
+    transform: none;
+    opacity: 1;
+  }
+  75% {
+    transform: skew(0.4deg, 1deg);
+    opacity: 0.75;
+  }
+  80% {
+    transform: none;
+    opacity: 1;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes glitch2 {
+  0% {
+    transform: none;
+    opacity: 0.25;
+  }
+  7% {
+    transform: translate(-2px, -3px);
+    opacity: 0.5;
+  }
+  10% {
+    transform: none;
+    opacity: 0.25;
+  }
+  27% {
+    transform: none;
+    opacity: 0.25;
+  }
+  30% {
+    transform: translate(-5px, -2px);
+    opacity: 0.5;
+  }
+  35% {
+    transform: none;
+    opacity: 0.25;
+  }
+  52% {
+    transform: none;
+    opacity: 0.25;
+  }
+  55% {
+    transform: translate(-5px, -1px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: none;
+    opacity: 0.25;
+  }
+  72% {
+    transform: none;
+    opacity: 0.25;
+  }
+  75% {
+    transform: translate(-2px, -6px);
+    opacity: 0.5;
+  }
+  80% {
+    transform: none;
+    opacity: 0.25;
+  }
+  100% {
+    transform: none;
+    opacity: 0.25;
+  }
+}
+
+@keyframes glitch3 {
+  0% {
+    transform: none;
+    opacity: 0.25;
+  }
+  7% {
+    transform: translate(2px, 3px);
+    opacity: 0.5;
+  }
+  10% {
+    transform: none;
+    opacity: 0.25;
+  }
+  27% {
+    transform: none;
+    opacity: 0.25;
+  }
+  30% {
+    transform: translate(5px, 2px);
+    opacity: 0.5;
+  }
+  35% {
+    transform: none;
+    opacity: 0.25;
+  }
+  52% {
+    transform: none;
+    opacity: 0.25;
+  }
+  55% {
+    transform: translate(5px, 1px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: none;
+    opacity: 0.25;
+  }
+  72% {
+    transform: none;
+    opacity: 0.25;
+  }
+  75% {
+    transform: translate(2px, 6px);
+    opacity: 0.5;
+  }
+  80% {
+    transform: none;
+    opacity: 0.25;
+  }
+  100% {
+    transform: none;
+    opacity: 0.25;
+  }
+}
+
+
+/* Loader CSS */
+.preloader {
+	background-color: #202631;
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 9999;
+}
+.lds-ellipsis {
+	margin: 0 auto;
+	position: relative;
+	top: 50%;
+	-moz-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	width: 64px;
+	text-align: center;
+	z-index: 9999;
+}
+.lds-ellipsis span {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background-color: #f54287;
+	-webkit-animation: ball-pulse-sync 1s 0s infinite ease-in-out;
+	animation: ball-pulse-sync 1s 0s infinite ease-in-out;
+}
+.lds-ellipsis span:nth-child(1) {
+	-webkit-animation:ball-pulse-sync 1s -.14s infinite ease-in-out;
+	animation:ball-pulse-sync 1s -.14s infinite ease-in-out
+}
+.lds-ellipsis span:nth-child(2) {
+	-webkit-animation:ball-pulse-sync 1s -70ms infinite ease-in-out;
+	animation:ball-pulse-sync 1s -70ms infinite ease-in-out
+}
+@-webkit-keyframes ball-pulse-sync {
+	33% {
+		-webkit-transform:translateY(10px);
+		transform:translateY(10px)
+ }
+	66% {
+		-webkit-transform:translateY(-10px);
+		transform:translateY(-10px)
+	}
+	100% {
+		-webkit-transform:translateY(0);
+		transform:translateY(0)
+	}
+}
+@keyframes ball-pulse-sync {
+	33% {
+		-webkit-transform:translateY(10px);
+		transform:translateY(10px)
+	}
+	66% {
+		-webkit-transform:translateY(-10px);
+		transform:translateY(-10px)
+	}
+	100% {
+		-webkit-transform:translateY(0);
+		transform:translateY(0)
+	}
+}
+
+#discord-ui {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right:0;
+    top: 10px;
+    margin-right: 10px;
+}
+
+@media (min-width: 1060px) {
+  #discord-ui {
+    display: block;
+  }
+}
+
+</style>
+<body oncontextmenu="return false" onkeydown="return false;">
+<div class="preloader">
+  <div class="lds-ellipsis">
+	  <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<div id="particles-js">
+<script src="js/test.js"></script>
+<script src="js/particle.js"></script>
+<p class="glitch_fixed">
+<font size="6">
+  <strong>
+  <span>I</span>
+  <span>C</span>
+  <span>E</span>
+  <span>x</span>
+  <span>P</span>
+  <span>U</span>
+  <span>N</span>
+  </strong>
+</font>
+<br />
+<static>! uwu.*#6969</static>
+<br />
+<static>??? 9-12-2020 </static><countdown id="countdown">Fetching data ... <i class="fas fa-sync fa-spin" style="font-size:12px"></i></countdown>
+<br>
+<static>รออยู่นะค้าบ :] </static>
+<br />
+</p>
+<div id="date">
+<font size="2" color="#FFF">November 21, 2005</font>
+</div>
+<div id="author">
+<font color="#FFF" size="2">Made with</font> <font color="#f54287"><i class="fas fa-heart" style="font-size:12px"></i></font> <font size="2" color="#FFF">by <b>Inshallah</b></font>
+</div>
+</div>
+
+<script>var countDownDate = new Date("Sep 12, 2021 00:00:00").getTime();</script>
+
+<script>
+  particlesJS.load('particles-js', 'particle-cfg.json', function() {});
+</script>
+
+</html>
